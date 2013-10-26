@@ -81,7 +81,13 @@ public class CodeBreakerTest {
 	@Test
 	public void tresCoincidenUnaPosicionErradaUnaBuenaTest(){
 		respuesta = juego.validarPosiciones("9819");
-		Assert.assertEquals("-XXX", respuesta);		
+		Assert.assertEquals("XXX", respuesta);		
+	}
+	
+	@Test
+	public void contieneUnaPosicionDeDosRepetidas(){
+		respuesta = juego.validarPosiciones("1157");
+		Assert.assertEquals("-", respuesta);		
 	}
 	
 	@Test
@@ -112,5 +118,6 @@ public class CodeBreakerTest {
 	public void unoCoincideContieneTresTest(){
 		respuesta = juego.validarPosiciones("9881");
 		Assert.assertEquals("-X--", respuesta);		
-	}
+	}	
+	
 }
